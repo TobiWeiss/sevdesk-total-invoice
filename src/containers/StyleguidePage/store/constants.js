@@ -1,0 +1,3 @@
+export const GET_TEST_API_DETAILS = 'app/Styleguide/GET_TEST_API_DETAILS';
+export const GET_TEST_API_DETAILS_SUCCESS = 'app/Styleguide/GET_TEST_API_DETAILS_SUCCESS';
+export const GET_TEST_API_DETAILS_FAILURE = 'app/Styleguide/GET_TEST_API_DETAILS_FAILURE';

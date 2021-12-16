@@ -1,0 +1,35 @@
+- use webpack newest version
+
+
+
+Redux
+Redux-Saga
+Styled-Components
+styled-components-spacing -> geht nicht zu installieren
+
+
+i18n
+component generation
+injected saga / injected reducers
+
+toaster
+helmet
+pre-commit
+
+favicon
+basic components (buttons, text etc)
+utils from max
+
+
+eslint rules: empty body, arrow-parens (fix)
+connected-router
+
+favicon
+pass dropdown width
+loadable
+default_headers in interceptor
+
+SAGA
+saga + utils überarbeiten -> package invariant entfernen
+@babel/polyfill entfernen?
+show toast if saga fails
