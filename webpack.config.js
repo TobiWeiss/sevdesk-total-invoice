@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const dotenv = require('dotenv');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const env = dotenv.config().parsed;
 
@@ -53,5 +54,11 @@ module.exports = {
       template: path.join(__dirname, 'src', 'index.html'),
     }),
     new webpack.DefinePlugin(envKeys),
+    new CopyPlugin({
+      patterns: [{ from: 'src/assets', to: 'assets' }],
+      options: {
+        concurrency: 100,
+      },
+    }),
   ],
 };
