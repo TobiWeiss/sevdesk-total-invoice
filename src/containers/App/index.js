@@ -1,16 +1,18 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import GlobalStyles from '../../global-styles';
-import Styleguide from '../StyleguidePage';
+import HomePage from '../HomePage';
+import StyleguidePage from '../StyleguidePage';
+import NotFoundPage from '../NotFoundPage';
 
 const App = function () {
-  const a = 3;
-
   return (
     <>
       <GlobalStyles />
       <Switch>
-        <Route exact path="/" component={Styleguide} />
+        <Route exact path="/" component={HomePage} />
+        <Route path="/styleguide" component={StyleguidePage} />
+        <Route component={NotFoundPage} />
       </Switch>
     </>
   );
