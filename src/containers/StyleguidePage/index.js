@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
+import { v4 as uuidv4 } from 'uuid';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import Chip from '../../components/Chip';
 import theme from '../../theme';
@@ -14,6 +15,8 @@ import StyleguideToast from './components/StyleguideToast';
 const StyleguidePage = function () {
   // eslint-disable-next-line no-unused-vars
   const { testApiDetails, isLoading } = useGetOrderDetails(1);
+
+  const mappingExample = [1, 2, 3, 4];
 
   return (
     <>
@@ -39,6 +42,13 @@ const StyleguidePage = function () {
         <Chip color={theme.colors.primary} text="Removable Chip" isRemovable />
 
         <p>list icons</p>
+
+        <H2>Mapping</H2>
+        <ul>
+          {mappingExample.map((item) => (
+            <li key={uuidv4()}>{item}</li>
+          ))}
+        </ul>
 
         <H2>Dropdown</H2>
         <Dropdown
