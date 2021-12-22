@@ -22,6 +22,8 @@ The red marked issues are fixed soon by JH
 * <span style="color:red">update eslint rules:</span>
   * empty body
   * arrow-parens
+  * radix param in parseInt
+  * remove keydown require at div click
 * <span style="color:red">FIX: pass dropdown width</span>
 * use loadables from Max?
 * <span style="color:red">set default headers in interceptor</span>
