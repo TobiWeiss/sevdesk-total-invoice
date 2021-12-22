@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import theme from '../../theme';
 
 const TextSmall = styled.span`
-  font-family: ${props => props.font};
+  font-family: ${(props) => props.font};
   font-size: 12px;
-  font-weight: ${props => (props.isBold ? 700 : 400)};
-  color: ${props => props.color};
-  display: ${props => (props.isInline ? 'inline-block' : 'block')};
+  font-weight: ${(props) => (props.isBold ? 700 : 400)};
+  color: ${(props) => props.color};
+  display: ${(props) => (props.isInline ? 'inline-block' : 'block')};
 `;
 
 TextSmall.defaultProps = {

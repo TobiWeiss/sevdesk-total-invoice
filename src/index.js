@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import configureStore from './configure-store';
 import App from './containers/App';
+import './http.interceptor';
 const initialState = {};
 const store = configureStore(initialState);
 

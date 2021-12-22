@@ -4,7 +4,7 @@ import { Dropdown as BootstrapDropdown, Form } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 import StyledDropdown from './StyledDropdown';
 import IconChevron from '../Icons/IconChevron';
-import TextSmall from '../TextSmall';
+import TextSmall from '../Text/TextSmall';
 import theme from '../../theme';
 import StyledDropdownLabel from './StyledDropdownLabel';
 

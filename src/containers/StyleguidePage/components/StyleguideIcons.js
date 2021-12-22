@@ -1,5 +1,5 @@
 import React from 'react';
-import H2 from '../../../components/H2';
+import H2 from '../../../components/Headlines/H2';
 import IconAdd from '../../../components/Icons/IconAdd';
 import IconAddNoCircle from '../../../components/Icons/IconAddNoCircle';
 import IconArrow from '../../../components/Icons/IconArrow';

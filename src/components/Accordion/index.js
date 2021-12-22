@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 import StyledAccordionHeader from './StyledAccordionHeader';
 import IconChevron from '../Icons/IconChevron';
-import H3 from '../H3';
+import H3 from '../Headlines/H3';
 import StyledAccordion from './StyledAccordion';
 
 const Accordion = function ({ elements, activeIndex, setActiveIndex }) {
