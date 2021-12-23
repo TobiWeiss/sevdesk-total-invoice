@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import { FormattedMessage } from 'react-intl';
+import messages from './messages';
 
 const HomePage = function () {
   return (
     <Container className="mt-5">
       <h1>Hello bytabo members</h1>
       <p>
-        See predefined components and other code examples in the{' '}
+        <FormattedMessage {...messages.linkStyleguide} />
         <Link to="/styleguide">styleguide</Link>
       </p>
     </Container>

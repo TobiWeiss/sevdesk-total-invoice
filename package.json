@@ -8,15 +8,18 @@
     "start": "webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --fix",
-    "format-code": "prettier --write './**/*.{js,scss,json}' --config ./.prettierrc"
+    "format-code": "prettier --write './**/*.{js,scss,json}' --config ./.prettierrc",
+    "extract-translations": "formatjs extract"
   },
-  "author": "Anubhav Sarkar",
+  "author": "bytabo GmbH",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.13.1",
     "@babel/preset-env": "^7.13.5",
     "@babel/preset-react": "^7.12.13",
+    "@formatjs/cli": "^4.5.0",
     "babel-loader": "^8.2.2",
+    "babel-plugin-formatjs": "^10.3.12",
     "css-loader": "^5.1.0",
     "eslint": "^8.4.1",
     "eslint-config-airbnb": "^19.0.2",
@@ -51,6 +54,7 @@
     "react-bootstrap": "^2.0.3",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
+    "react-intl": "^5.24.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.2.0",
     "react-toastify": "^8.1.0",

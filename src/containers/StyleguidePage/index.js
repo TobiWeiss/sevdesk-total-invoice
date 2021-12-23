@@ -11,6 +11,7 @@ import StyleguideLists from './components/StyleguideLists';
 import StyleguideDropdown from './components/StyleguideDropdown';
 import StyleguideApiConnection from './components/StyleguideApiConnection';
 import StyleguideLoadingSpinner from './components/StyleguideLoadingSpinner';
+import StyleguideTranslations from './components/StyleguideTranslations';
 
 const StyleguidePage = function () {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,6 +41,10 @@ const StyleguidePage = function () {
             {
               headline: 'Usage env variables',
               content: <StyleguideEnv />,
+            },
+            {
+              headline: 'Translations',
+              content: <StyleguideTranslations />,
             },
             {
               headline: 'Loading Spinner',

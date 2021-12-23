@@ -4,6 +4,13 @@
         "@babel/react"
     ],
     "plugins": [
-        "@babel/plugin-proposal-class-properties"
+        "@babel/plugin-proposal-class-properties",
+        [
+          "formatjs",
+          {
+            "idInterpolationPattern": "[sha512:contenthash:base64:6]",
+            "ast": true
+          }
+        ]
     ]
 }
