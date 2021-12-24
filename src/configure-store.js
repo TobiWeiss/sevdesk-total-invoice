@@ -1,6 +1,8 @@
+/* eslint-disable import/no-import-module-exports */
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
+/* eslint-enable */
 
 export default (initialState = {}) => {
   let composeEnhancers = compose;

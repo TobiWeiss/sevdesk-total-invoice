@@ -21,6 +21,8 @@ module.exports = {
   rules: {
     "indent": ["error", 2],
     "no-var": 2,
+    "default-param-last": 0,
+    "default-case":0,
 
     'react/react-in-jsx-scope': 'off',
     'import/imports-first': 0,
@@ -82,11 +84,6 @@ module.exports = {
     "prefer-arrow-callback": [
       "error",
       {"allowNamedFunctions": true}
-    ],
-    "func-style": [
-      "error",
-      "expression",
-      {"allowArrowFunctions": true}
     ],
 
 

@@ -8,9 +8,9 @@ const StyleguideHeadlines = () => {
 
   return (
     <>
-      <div onClick={notifyInfo}>Show Info Toast</div>
-      <div onClick={notifyError}>Show Error Toast</div>
-      <div onClick={notifySuccess}>Show Success Toast</div>
+      <div role="button" onClick={notifyInfo}>Show Info Toast</div>
+      <div role="button" onClick={notifyError}>Show Error Toast</div>
+      <div role="button" onClick={notifySuccess}>Show Success Toast</div>
     </>
   );
 };

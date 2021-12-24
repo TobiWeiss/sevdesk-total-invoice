@@ -4,7 +4,7 @@ import invariant from 'invariant';
 /**
  * Validate the shape of redux store
  */
-export default function checkStore(store) {
+export default (store) => {
   const shape = {
     dispatch: isFunction,
     subscribe: isFunction,
@@ -18,4 +18,4 @@ export default function checkStore(store) {
     conformsTo(store, shape),
     '(app/utils...) injectors: Expected a valid redux store',
   );
-}
+};

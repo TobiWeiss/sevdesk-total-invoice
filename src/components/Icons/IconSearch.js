@@ -20,7 +20,7 @@ const IconSearch = ({
         y1="17.2929"
         x2="20.7071"
         y2="21.2929"
-        stroke="#C4C4C4"
+        stroke={color}
         strokeWidth="2"
       />
     </svg>

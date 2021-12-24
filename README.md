@@ -28,6 +28,9 @@ The red marked issues are fixed soon by JH
 
 ### Currently open issues:
 
+
+fix passed payload id in saga
+
 * update webpack to the newest version
 * implement tests (Lorenzo)
 * use styled components spacing (currently not running with current styled-components version)
@@ -37,8 +40,7 @@ The red marked issues are fixed soon by JH
 * have a look at src/utils -> are these all really relevant?
 * use connected-router? if yes write in state (look at Max)
 * <span style="color:red">update eslint rules:</span>
-  * empty body
-  * arrow-parens
+  * switch case indent
 * <span style="color:red">FIX: pass dropdown width</span>
 * <span style="color:red">Order dependencies</span>
 * use loadables from Max?

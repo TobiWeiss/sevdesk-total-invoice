@@ -14,7 +14,6 @@ import IconEye from '../../../components/Icons/IconEye';
 import IconHome from '../../../components/Icons/IconHome';
 import IconInfo from '../../../components/Icons/IconInfo';
 import IconPackage from '../../../components/Icons/IconPackage';
-import IconPallet from '../../../components/Icons/IconPallet';
 import IconProfile from '../../../components/Icons/IconProfile';
 import IconSave from '../../../components/Icons/IconSave';
 import IconSearch from '../../../components/Icons/IconSearch';
@@ -41,7 +40,6 @@ const StyleguideIcons = () => (
     <IconHome size="lg" />
     <IconInfo size="lg" />
     <IconPackage size="lg" />
-    <IconPallet size="lg" />
     <IconProfile size="lg" />
     <IconSave size="lg" />
     <IconSearch size="lg" />

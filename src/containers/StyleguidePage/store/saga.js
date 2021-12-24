@@ -11,7 +11,6 @@ function* getTestApiDetails(payload) {
     yield put(getTestApiDetailsSuccess(result.data));
   } catch (error) {
     yield put(getTestApiDetailsFailure(error));
-    console.log('error', error);
   }
 }
 
