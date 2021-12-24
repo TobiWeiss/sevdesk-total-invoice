@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGetOrderDetails } from '../hooks';
 
-const StyleguideApiConnection = function () {
+const StyleguideApiConnection = () => {
   // eslint-disable-next-line no-unused-vars
   const { testApiDetails, isLoading } = useGetOrderDetails(1);
 

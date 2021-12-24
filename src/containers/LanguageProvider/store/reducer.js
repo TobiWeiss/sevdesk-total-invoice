@@ -5,13 +5,12 @@ import { initialStates } from '../data';
 
 export const initialState = initialStates.language;
 
-const orderOverviewPageReducer = (state = initialState, action) =>
-  produce(state, (draft) => {
-    switch (action.type) {
-      case SET_LANGUAGE:
-        draft.language = action.payload;
-        break;
-    }
-  });
+const orderOverviewPageReducer = (state = initialState, action) => produce(state, (draft) => {
+  switch (action.type) {
+  case SET_LANGUAGE:
+    draft.language = action.payload;
+    break;
+  }
+});
 
 export default orderOverviewPageReducer;

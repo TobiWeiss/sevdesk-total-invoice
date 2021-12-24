@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import IconWrapper from './IconWrapper';
 import theme from '../../theme';
 
-const IconAdd = props => (
+const IconAdd = (props) => (
   <IconWrapper {...props}>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
       <g id="Ebene_2" data-name="Ebene 2">

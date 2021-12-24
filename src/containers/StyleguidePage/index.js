@@ -13,8 +13,9 @@ import StyleguideApiConnection from './components/StyleguideApiConnection';
 import StyleguideLoadingSpinner from './components/StyleguideLoadingSpinner';
 import StyleguideTranslations from './components/StyleguideTranslations';
 
-const StyleguidePage = function () {
+const StyleguidePage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <>
       <Helmet>

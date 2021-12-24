@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import IconWrapper from './IconWrapper';
 import theme from '../../theme';
 
-const IconPallet = props => (
+const IconPallet = (props) => (
   <IconWrapper {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"

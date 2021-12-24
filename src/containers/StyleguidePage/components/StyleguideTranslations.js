@@ -3,23 +3,21 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import messages from '../messages';
 
-const StyleguideTranslations = function ({ intl }) {
-  return (
-    <div>
-      <h3>Formatted Message</h3>
-      <FormattedMessage {...messages.exampleMessage} />
+const StyleguideTranslations = ({ intl }) => (
+  <div>
+    <h3>Formatted Message</h3>
+    <FormattedMessage {...messages.exampleMessage} />
 
-      <h3>Formatted Message with values</h3>
-      <FormattedMessage
-        {...messages.exampleMessageWithValue}
-        values={{ ts: Date.now() }}
-      />
+    <h3>Formatted Message with values</h3>
+    <FormattedMessage
+      {...messages.exampleMessageWithValue}
+      values={{ ts: Date.now() }}
+    />
 
-      <h3>Using its value</h3>
-      <input placeholder={intl.formatMessage(messages.exampleMessage)} />
-    </div>
-  );
-};
+    <h3>Using its value</h3>
+    <input placeholder={intl.formatMessage(messages.exampleMessage)} />
+  </div>
+);
 
 StyleguideTranslations.propTypes = {
   intl: PropTypes.object,

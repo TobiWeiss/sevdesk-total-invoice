@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const StyleguideHeadlines = function () {
+const StyleguideHeadlines = () => {
   const notifyInfo = () => toast.info('This is the default toast');
   const notifyError = () => toast.error('This is the default toast');
   const notifySuccess = () => toast.success('This is the default toast');

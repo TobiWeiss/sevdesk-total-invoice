@@ -13,21 +13,20 @@ export const initialState = {
   data: initialStates.data,
 };
 
-const orderOverviewPageReducer = (state = initialState, action) =>
-  produce(state, (draft) => {
-    switch (action.type) {
-      case GET_TEST_API_DETAILS:
-        draft.loading = true;
-        break;
-      case GET_TEST_API_DETAILS_SUCCESS:
-        draft.loading = false;
-        draft.data = action.payload;
-        break;
-      case GET_TEST_API_DETAILS_FAILURE:
-        draft.loading = false;
-        draft.error = action.payload;
-        break;
-    }
-  });
+const orderOverviewPageReducer = (state = initialState, action) => produce(state, (draft) => {
+  switch (action.type) {
+  case GET_TEST_API_DETAILS:
+    draft.loading = true;
+    break;
+  case GET_TEST_API_DETAILS_SUCCESS:
+    draft.loading = false;
+    draft.data = action.payload;
+    break;
+  case GET_TEST_API_DETAILS_FAILURE:
+    draft.loading = false;
+    draft.error = action.payload;
+    break;
+  }
+});
 
 export default orderOverviewPageReducer;

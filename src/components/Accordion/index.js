@@ -12,8 +12,8 @@ import IconChevron from '../Icons/IconChevron';
 import H3 from '../Headlines/H3';
 import StyledAccordion from './StyledAccordion';
 
-const Accordion = function ({ elements, activeIndex, setActiveIndex }) {
-  const ContextAwareToggle = function ({ children, eventKey }) {
+const Accordion = ({ elements, activeIndex, setActiveIndex }) => {
+  const ContextAwareToggle = ({ children, eventKey }) => {
     const { activeEventKey } = useContext(AccordionContext);
     const decoratedOnClick = useAccordionButton(eventKey.toString(), () => {
       if (eventKey === activeIndex) {

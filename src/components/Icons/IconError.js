@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import IconWrapper from './IconWrapper';
 import theme from '../../theme';
 
-const IconError = props => (
+const IconError = (props) => (
   <IconWrapper {...props}>
     <svg
       width="100%"

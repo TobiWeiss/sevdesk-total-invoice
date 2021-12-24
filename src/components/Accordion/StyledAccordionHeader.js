@@ -12,15 +12,13 @@ const StyledAccordionHeader = styled.div`
     padding: 10px 20px;
     flex-grow: 1;
 
-    ${(props) =>
-      props.active &&
-      css`
+    ${(props) => props.active
+      && css`
         background: ${theme.colors.primary};
         color: ${theme.colors.white};
       `}
-    ${(props) =>
-      !props.active &&
-      css`
+    ${(props) => !props.active
+      && css`
         background: ${theme.colors.lightGrey};
         border-bottom-right-radius: 12px;
         border-bottom-left-radius: 12px;

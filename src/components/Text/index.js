@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import theme from '../../theme';
 
 const Text = styled.span`
-  font-family: ${props => props.font};
+  font-family: ${(props) => props.font};
   font-size: 15px;
-  font-weight: ${props => (props.isBold ? 700 : 400)};
-  color: ${props => props.color};
-  display: ${props => (props.isInline ? 'inline-block' : 'block')};
-  text-align: ${props => props.textAlign};
+  font-weight: ${(props) => (props.isBold ? 700 : 400)};
+  color: ${(props) => props.color};
+  display: ${(props) => (props.isInline ? 'inline-block' : 'block')};
+  text-align: ${(props) => props.textAlign};
 `;
 
 Text.defaultProps = {

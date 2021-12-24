@@ -4,7 +4,9 @@ import StyledChip from './StyledChip';
 import theme from '../../theme';
 import IconClose from '../Icons/IconClose';
 
-const Chip = function ({ onSelect, text, isRemovable, handleRemove, color }) {
+const Chip = ({
+  onSelect, text, isRemovable, handleRemove, color,
+}) => {
   const handleClick = () => {
     onSelect(text);
   };

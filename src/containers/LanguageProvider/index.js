@@ -11,7 +11,7 @@ export const appLocales = {
   en: TranslationsEnglish,
 };
 
-const LanguageProvider = function ({ children }) {
+const LanguageProvider = ({ children }) => {
   const { selectedLanguage } = useGetLanguage();
 
   // comment the console.error line in once translations in .json files are complete

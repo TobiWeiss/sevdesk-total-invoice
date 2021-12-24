@@ -1,12 +1,10 @@
 import React from 'react';
 import LoadingSpinner from '../../../components/LoadingSpinner';
 
-const StyleguideLoadingSpinner = function () {
-  return (
-    <div>
-      <LoadingSpinner />
-    </div>
-  );
-};
+const StyleguideLoadingSpinner = () => (
+  <div>
+    <LoadingSpinner />
+  </div>
+);
 
 export default StyleguideLoadingSpinner;

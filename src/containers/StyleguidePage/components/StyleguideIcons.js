@@ -27,39 +27,37 @@ import IconSubtract from '../../../components/Icons/IconSubtract';
 import IconTrash from '../../../components/Icons/IconTrash';
 import IconValid from '../../../components/Icons/IconValid';
 
-const StyleguideIcons = function () {
-  return (
-    <>
-      <H2>Icons</H2>
-      <IconAdd size="lg" />
-      <IconAddNoCircle size="lg" />
-      <IconArrow size="lg" />
-      <IconCalendar size="lg" />
-      <IconChevron size="lg" />
-      <IconClose size="lg" />
-      <IconDuplicate size="lg" />
-      <IconEdit size="lg" />
-      <IconError size="lg" />
-      <IconExport size="lg" />
-      <IconEye size="lg" />
-      <IconHome size="lg" />
-      <IconInfo size="lg" />
-      <IconLogo size="lg" />
-      <IconPackage size="lg" />
-      <IconPallet size="lg" />
-      <IconPlay size="lg" />
-      <IconPrintLabels size="lg" />
-      <IconProfile size="lg" />
-      <IconSave size="lg" />
-      <IconSearch size="lg" />
-      <IconStar size="lg" />
-      <IconSubmit size="lg" />
-      <IconSubtract size="lg" />
-      <IconTrash size="lg" />
-      <IconValid size="lg" />
-      <IconAdd size="lg" />
-    </>
-  );
-};
+const StyleguideIcons = () => (
+  <>
+    <H2>Icons</H2>
+    <IconAdd size="lg" />
+    <IconAddNoCircle size="lg" />
+    <IconArrow size="lg" />
+    <IconCalendar size="lg" />
+    <IconChevron size="lg" />
+    <IconClose size="lg" />
+    <IconDuplicate size="lg" />
+    <IconEdit size="lg" />
+    <IconError size="lg" />
+    <IconExport size="lg" />
+    <IconEye size="lg" />
+    <IconHome size="lg" />
+    <IconInfo size="lg" />
+    <IconLogo size="lg" />
+    <IconPackage size="lg" />
+    <IconPallet size="lg" />
+    <IconPlay size="lg" />
+    <IconPrintLabels size="lg" />
+    <IconProfile size="lg" />
+    <IconSave size="lg" />
+    <IconSearch size="lg" />
+    <IconStar size="lg" />
+    <IconSubmit size="lg" />
+    <IconSubtract size="lg" />
+    <IconTrash size="lg" />
+    <IconValid size="lg" />
+    <IconAdd size="lg" />
+  </>
+);
 
 export default StyleguideIcons;

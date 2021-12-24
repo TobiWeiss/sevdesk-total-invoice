@@ -8,14 +8,14 @@ import TextSmall from '../Text/TextSmall';
 import theme from '../../theme';
 import StyledDropdownLabel from './StyledDropdownLabel';
 
-const Dropdown = function ({
+const Dropdown = ({
   values,
   label,
   selected,
   setSelected,
   placeholder,
   defaultValue,
-}) {
+}) => {
   useEffect(() => {
     if (!selected && defaultValue) {
       setSelected({ value: defaultValue });
