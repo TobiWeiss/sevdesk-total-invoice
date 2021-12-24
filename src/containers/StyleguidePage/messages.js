@@ -13,7 +13,7 @@ export default defineMessages({
     defaultMessage: 'This is an example for translating messages. ',
   },
   exampleMessageWithValue: {
-    id: `${scope}.exampleMessage`,
+    id: `${scope}.exampleMessageWithValue`,
     defaultMessage: "Today's date: {ts, date, ::yyyyMMdd}",
   },
 });

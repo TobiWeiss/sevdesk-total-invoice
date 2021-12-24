@@ -1,6 +1,7 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
 import PropTypes from 'prop-types';
+import { flatten } from 'flat';
 import { useGetLanguage } from './hooks';
 import TranslationsEnglish from '../../translations/en.json';
 import TranslationsGerman from '../../translations/de.json';
@@ -21,7 +22,7 @@ const LanguageProvider = function ({ children }) {
 
   return (
     <IntlProvider
-      messages={appLocales[selectedLanguage] || {}}
+      messages={flatten(appLocales[selectedLanguage]) || {}}
       locale={selectedLanguage}
       onError={customOnErrorFunction}
     >

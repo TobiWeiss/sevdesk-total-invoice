@@ -3,3 +3,5 @@ dist
 .idea
 .env
 extracted-translation.json
+src/translations/generated
+package-lock.json
