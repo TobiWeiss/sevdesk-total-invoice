@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import IconWrapper from './IconWrapper';
 import theme from '../../theme';
 
-const IconSearch = (props) => (
-  <IconWrapper {...props}>
+const IconSearch = ({
+  margin, color, size, direction,
+}) => (
+  <IconWrapper margin={margin} size={size} direction={direction}>
     <svg
-      width="22"
-      height="22"
+      width="100%"
+      height="100%"
       viewBox="0 0 22 22"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -26,13 +28,17 @@ const IconSearch = (props) => (
 );
 
 IconSearch.defaultProps = {
+  margin: '',
   color: theme.colors.darkGray,
   size: 'sm',
+  direction: 'down',
 };
 
 IconSearch.propTypes = {
+  margin: PropTypes.string,
   color: PropTypes.oneOf(Object.values(theme.colors)),
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  direction: PropTypes.oneOf(['up', 'down', 'left', 'right']),
 };
 
 export default IconSearch;

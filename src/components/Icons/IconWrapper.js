@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 
 const IconWrapper = styled.div`
   pointer-events: none;
@@ -30,5 +31,11 @@ const IconWrapper = styled.div`
       width: 24px;
     `};
 `;
+
+IconWrapper.propTypes = {
+  margin: PropTypes.string,
+  size: PropTypes.string,
+  direction: PropTypes.string,
+};
 
 export default IconWrapper;

@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import IconWrapper from './IconWrapper';
 import theme from '../../theme';
 
-const IconPallet = (props) => (
-  <IconWrapper {...props}>
+const IconPallet = ({
+  margin, color, size, direction,
+}) => (
+  <IconWrapper margin={margin} size={size} direction={direction}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="100%"
+      height="100%"
       viewBox="0 0 252.73 156.6"
     >
       <g id="Ebene_2" data-name="Ebene 2">
@@ -47,12 +49,14 @@ IconPallet.defaultProps = {
   margin: '0 0 0 0',
   color: theme.colors.darkGray,
   size: 'sm',
+  direction: 'down',
 };
 
 IconPallet.propTypes = {
   margin: PropTypes.string,
   color: PropTypes.oneOf(Object.values(theme.colors)),
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  direction: PropTypes.oneOf(['up', 'down', 'left', 'right']),
 };
 
 export default IconPallet;

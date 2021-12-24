@@ -12,52 +12,54 @@ import IconChevron from '../Icons/IconChevron';
 import H3 from '../Headlines/H3';
 import StyledAccordion from './StyledAccordion';
 
-const Accordion = ({ elements, activeIndex, setActiveIndex }) => {
-  const ContextAwareToggle = ({ children, eventKey }) => {
-    const { activeEventKey } = useContext(AccordionContext);
-    const decoratedOnClick = useAccordionButton(eventKey.toString(), () => {
-      if (eventKey === activeIndex) {
-        setActiveIndex(-1);
-      } else {
-        setActiveIndex(eventKey);
-      }
-    });
-    const isActive = activeEventKey === eventKey.toString();
-
-    return (
-      <div
-        className={isActive ? 'active' : null}
-        onClick={decoratedOnClick}
-        role="button"
-        tabIndex={0}
-      >
-        <H3>{children}</H3>
-        <div className="align-self-center">
-          <IconChevron direction={isActive ? 'up' : 'down'} />
-        </div>
-      </div>
-    );
-  };
-  ContextAwareToggle.propTypes = {
-    children: PropTypes.string,
-    eventKey: PropTypes.number,
-  };
+const ContextAwareToggle = ({
+  children, eventKey, activeIndex, setActiveIndex,
+}) => {
+  const { activeEventKey } = useContext(AccordionContext);
+  const decoratedOnClick = useAccordionButton(eventKey.toString(), () => {
+    if (eventKey === activeIndex) {
+      setActiveIndex(-1);
+    } else {
+      setActiveIndex(eventKey);
+    }
+  });
+  const isActive = activeEventKey === eventKey.toString();
 
   return (
-    <BootstrapAccordion defaultActiveKey={activeIndex.toString()}>
-      {elements.map((elem, index) => (
-        <StyledAccordion key={uuidv4()}>
-          <StyledAccordionHeader active={index === activeIndex}>
-            <ContextAwareToggle eventKey={index}>{elem.headline}</ContextAwareToggle>
-          </StyledAccordionHeader>
-          <BootstrapAccordion.Collapse eventKey={index.toString()}>
-            <BootstrapCard.Body>{elem.content}</BootstrapCard.Body>
-          </BootstrapAccordion.Collapse>
-        </StyledAccordion>
-      ))}
-    </BootstrapAccordion>
+    <div
+      className={isActive ? 'active' : null}
+      onClick={decoratedOnClick}
+      role="button"
+      tabIndex={0}
+    >
+      <H3>{children}</H3>
+      <div className="align-self-center">
+        <IconChevron direction={isActive ? 'up' : 'down'} />
+      </div>
+    </div>
   );
 };
+ContextAwareToggle.propTypes = {
+  children: PropTypes.string,
+  eventKey: PropTypes.number,
+  activeIndex: PropTypes.number,
+  setActiveIndex: PropTypes.func,
+};
+
+const Accordion = ({ elements, activeIndex, setActiveIndex }) => (
+  <BootstrapAccordion defaultActiveKey={activeIndex.toString()}>
+    {elements.map((elem, index) => (
+      <StyledAccordion key={uuidv4()}>
+        <StyledAccordionHeader active={index === activeIndex}>
+          <ContextAwareToggle eventKey={index} activeIndex={activeIndex} setActiveIndex={setActiveIndex}>{elem.headline}</ContextAwareToggle>
+        </StyledAccordionHeader>
+        <BootstrapAccordion.Collapse eventKey={index.toString()}>
+          <BootstrapCard.Body>{elem.content}</BootstrapCard.Body>
+        </BootstrapAccordion.Collapse>
+      </StyledAccordion>
+    ))}
+  </BootstrapAccordion>
+);
 
 Accordion.defaultProps = {
   elements: [],

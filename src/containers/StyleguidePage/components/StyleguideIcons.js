@@ -13,11 +13,8 @@ import IconExport from '../../../components/Icons/IconExport';
 import IconEye from '../../../components/Icons/IconEye';
 import IconHome from '../../../components/Icons/IconHome';
 import IconInfo from '../../../components/Icons/IconInfo';
-import IconLogo from '../../../components/Icons/IconLogo';
 import IconPackage from '../../../components/Icons/IconPackage';
 import IconPallet from '../../../components/Icons/IconPallet';
-import IconPlay from '../../../components/Icons/IconPlay';
-import IconPrintLabels from '../../../components/Icons/IconPrintLabels';
 import IconProfile from '../../../components/Icons/IconProfile';
 import IconSave from '../../../components/Icons/IconSave';
 import IconSearch from '../../../components/Icons/IconSearch';
@@ -43,11 +40,8 @@ const StyleguideIcons = () => (
     <IconEye size="lg" />
     <IconHome size="lg" />
     <IconInfo size="lg" />
-    <IconLogo size="lg" />
     <IconPackage size="lg" />
     <IconPallet size="lg" />
-    <IconPlay size="lg" />
-    <IconPrintLabels size="lg" />
     <IconProfile size="lg" />
     <IconSave size="lg" />
     <IconSearch size="lg" />

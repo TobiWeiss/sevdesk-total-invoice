@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import IconWrapper from './IconWrapper';
 import theme from '../../theme';
 
-const IconError = (props) => (
-  <IconWrapper {...props}>
+const IconError = ({
+  margin, color, size, direction,
+}) => (
+  <IconWrapper margin={margin} size={size} direction={direction}>
     <svg
       width="100%"
       height="100%"
@@ -12,10 +14,10 @@ const IconError = (props) => (
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="13" cy="13" r="12.5" stroke={props.color} />
+      <circle cx="13" cy="13" r="12.5" stroke={color} />
       <path
         d="M6 18H20L13 6L6 18ZM13.6364 16.1053H12.3636V14.8421H13.6364V16.1053ZM13.6364 13.5789H12.3636V11.0526H13.6364V13.5789Z"
-        fill={props.color}
+        fill={color}
       />
     </svg>
   </IconWrapper>
@@ -25,12 +27,14 @@ IconError.defaultProps = {
   margin: '0 0 0 0',
   color: theme.colors.red,
   size: 'sm',
+  direction: 'down',
 };
 
 IconError.propTypes = {
   margin: PropTypes.string,
   color: PropTypes.oneOf(Object.values(theme.colors)),
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  direction: PropTypes.oneOf(['up', 'down', 'left', 'right']),
 };
 
 export default IconError;
