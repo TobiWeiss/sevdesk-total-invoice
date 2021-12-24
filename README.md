@@ -27,10 +27,6 @@ comment in the codeline with console.error in src/containers/LanguageProvider/in
 The red marked issues are fixed soon by JH
 
 ### Currently open issues:
-
-
-fix passed payload id in saga
-
 * update webpack to the newest version
 * implement tests (Lorenzo)
 * use styled components spacing (currently not running with current styled-components version)
