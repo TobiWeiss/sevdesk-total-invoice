@@ -18,8 +18,8 @@ const StyledChip = styled.div`
 
   ${(props) => {
     switch (props.color) {
-    case theme.colors.darkGray:
-      return css`
+      case theme.colors.darkGray:
+        return css`
           background-color: ${theme.colors.darkGray};
           border-color: ${theme.colors.darkGray};
 
@@ -27,8 +27,8 @@ const StyledChip = styled.div`
             color: ${theme.colors.white};
           }
         `;
-    case theme.colors.white:
-      return css`
+      case theme.colors.white:
+        return css`
           background-color: ${theme.colors.white};
           border-color: ${theme.colors.darkGray};
 
@@ -36,8 +36,8 @@ const StyledChip = styled.div`
             color: ${theme.colors.darkGray};
           }
         `;
-    default:
-      return css`
+      default:
+        return css`
       background-color: ${props.color};
       border-color: ${props.color};
 

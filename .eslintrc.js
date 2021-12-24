@@ -19,7 +19,7 @@ module.exports = {
   },
   plugins: ['react', 'jsx-a11y', 'react-hooks', 'redux-saga', "prefer-arrow"],
   rules: {
-    "indent": ["error", 2],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
     "no-var": 2,
     "default-param-last": 0,
     "default-case":0,

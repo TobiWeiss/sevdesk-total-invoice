@@ -15,17 +15,17 @@ export const initialState = {
 
 const orderOverviewPageReducer = (state = initialState, action) => produce(state, (draft) => {
   switch (action.type) {
-  case GET_TEST_API_DETAILS:
-    draft.loading = true;
-    break;
-  case GET_TEST_API_DETAILS_SUCCESS:
-    draft.loading = false;
-    draft.data = action.payload;
-    break;
-  case GET_TEST_API_DETAILS_FAILURE:
-    draft.loading = false;
-    draft.error = action.payload;
-    break;
+    case GET_TEST_API_DETAILS:
+      draft.loading = true;
+      break;
+    case GET_TEST_API_DETAILS_SUCCESS:
+      draft.loading = false;
+      draft.data = action.payload;
+      break;
+    case GET_TEST_API_DETAILS_FAILURE:
+      draft.loading = false;
+      draft.error = action.payload;
+      break;
   }
 });
 
