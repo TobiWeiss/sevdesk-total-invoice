@@ -35,10 +35,7 @@ The red marked issues are fixed soon by JH
 * update readme with things to know / do at setup
 * have a look at src/utils -> are these all really relevant?
 * use connected-router? if yes write in state (look at Max)
-* <span style="color:red">update eslint rules:</span>
-  * switch case indent
 * <span style="color:red">FIX: pass dropdown width</span>
-* <span style="color:red">Order dependencies</span>
 * use loadables from Max?
 * look for a better usage for redux/saga (Alex)
 * reset state on page leave
