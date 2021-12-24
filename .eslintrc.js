@@ -1,5 +1,5 @@
 module.exports = {
-  ignorePatterns: ['.eslintrc.js', '**/vendor/*.js'],
+  ignorePatterns: ['.eslintrc.js', 'dist/**/*'],
 
   env: {
     browser: true,
@@ -9,7 +9,6 @@ module.exports = {
     'airbnb',
     'plugin:react/recommended',
     'eslint:recommended',
-    'plugin:prettier/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -18,12 +17,12 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier', 'jsx-a11y', 'react-hooks', 'redux-saga'],
+  plugins: ['react', 'jsx-a11y', 'react-hooks', 'redux-saga', "prefer-arrow"],
   rules: {
+    "indent": ["error", 2],
+    "no-var": 2,
+
     'react/react-in-jsx-scope': 'off',
-
-    'arrow-body-style': [2, 'as-needed'],
-
     'import/imports-first': 0,
     'import/newline-after-import': 0,
     'import/no-dynamic-require': 0,
@@ -33,7 +32,6 @@ module.exports = {
     'import/no-webpack-loader-syntax': 0,
     'import/prefer-default-export': 0,
 
-    indent: [2, 2],
     'jsx-a11y/aria-props': 2,
     'jsx-a11y/heading-has-content': 0,
     'jsx-a11y/label-has-for': 0,
@@ -60,5 +58,37 @@ module.exports = {
     'redux-saga/no-yield-in-race': 2,
     'redux-saga/yield-effects': 2,
     'require-yield': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/interactive-supports-focus': 0,
+    'radix': 0,
+
+    "react/jsx-props-no-spreading": [2, { // allow props spreading only on translations
+      "exceptions": ['FormattedMessage']
+    }],
+
+
+    "react/function-component-definition": [2, {
+      "namedComponents": "arrow-function",
+      "unnamedComponents": "arrow-function",
+    }],
+
+
+    "prefer-arrow/prefer-arrow-functions": [
+      "error",
+      {
+        "disallowPrototype": false
+      }
+    ],
+    "prefer-arrow-callback": [
+      "error",
+      {"allowNamedFunctions": true}
+    ],
+    "func-style": [
+      "error",
+      "expression",
+      {"allowArrowFunctions": true}
+    ],
+
+
   },
 };

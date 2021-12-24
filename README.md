@@ -39,9 +39,8 @@ The red marked issues are fixed soon by JH
 * <span style="color:red">update eslint rules:</span>
   * empty body
   * arrow-parens
-  * radix param in parseInt
-  * remove keydown require at div click
 * <span style="color:red">FIX: pass dropdown width</span>
+* <span style="color:red">Order dependencies</span>
 * use loadables from Max?
 * look for a better usage for redux/saga (Alex)
 * reset state on page leave
