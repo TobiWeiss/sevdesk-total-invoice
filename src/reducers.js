@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import languageReducer from './containers/LanguageProvider/store/reducer';
-import styleguidePageReducer from './containers/StyleguidePage/store/reducer';
+import deliveryNotePageReducer from './containers/DeliveryNotePage/store/reducer';
 // import { connectRouter } from 'connected-react-router';
 
 export default (injectedReducers = {}) => {
@@ -8,8 +8,7 @@ export default (injectedReducers = {}) => {
     language: languageReducer,
     // router: connectRouter(history),
     ...injectedReducers,
-
-    styleguidePage: styleguidePageReducer,
+    deliveryNotePage: deliveryNotePageReducer
   });
 
   return rootReducer;

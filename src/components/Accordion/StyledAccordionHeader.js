@@ -8,7 +8,7 @@ const StyledAccordionHeader = styled.div`
     border-top-left-radius: 12px;
     display: flex;
     justify-content: space-between;
-    background: ${theme.colors.lightGrey};
+    background: ${theme.colors.lightGray};
     padding: 10px 20px;
     flex-grow: 1;
 
@@ -19,7 +19,7 @@ const StyledAccordionHeader = styled.div`
       `}
     ${(props) => !props.active
       && css`
-        background: ${theme.colors.lightGrey};
+        background: ${theme.colors.lightGray};
         border-bottom-right-radius: 12px;
         border-bottom-left-radius: 12px;
       `}

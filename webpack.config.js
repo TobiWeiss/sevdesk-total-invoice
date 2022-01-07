@@ -26,7 +26,9 @@ module.exports = {
     port: 3000,
     open: true,
     historyApiFallback: true,
+    writeToDisk: true
   },
+  devtool: "inline-source-map",
   module: {
     rules: [
       {
@@ -59,6 +61,9 @@ module.exports = {
       options: {
         concurrency: 100,
       },
+    }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
     }),
   ],
 };

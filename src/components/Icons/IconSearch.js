@@ -34,11 +34,6 @@ IconSearch.defaultProps = {
   direction: 'down',
 };
 
-IconSearch.propTypes = {
-  margin: PropTypes.string,
-  color: PropTypes.oneOf(Object.values(theme.colors)),
-  size: PropTypes.oneOf(['sm', 'md', 'lg']),
-  direction: PropTypes.oneOf(['up', 'down', 'left', 'right']),
-};
+
 
 export default IconSearch;

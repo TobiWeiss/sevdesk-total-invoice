@@ -1,0 +1,21 @@
+[ignore]
+.*/build/*
+
+
+[untyped]
+.*/node_modules/*
+.*/node_modules/immer/dist/immer
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+sharedmemory.heap_size=3221225472
+module.name_mapper='^src\/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
+module.system=haste
+enums=true
+
+[strict]

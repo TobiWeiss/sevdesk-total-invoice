@@ -1,7 +1,15 @@
 import styled, { css } from 'styled-components';
+import type { ComponentType } from 'react';
 import PropTypes from 'prop-types';
 
-const IconWrapper = styled.div`
+
+type IconWrapperProps = {
+  margin: string,
+  size: "sm" | "md" | "lg",
+  direction: string,
+}
+
+const IconWrapper: ComponentType<IconWrapperProps> = styled.div`
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -31,11 +39,5 @@ const IconWrapper = styled.div`
       width: 24px;
     `};
 `;
-
-IconWrapper.propTypes = {
-  margin: PropTypes.string,
-  size: PropTypes.string,
-  direction: PropTypes.string,
-};
 
 export default IconWrapper;

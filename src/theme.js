@@ -1,9 +1,11 @@
 const theme = {
   colors: {
     primary: '#5bbd71',
-    lightGrey: '#e5e5e5',
-    darkGray: 'grey',
-    white: 'white',
+    lightGray: '#e5e5e5',
+    darkGray: '#838383',
+    darkBlue: '#2c3e50',
+    gray: '#979797',
+    white: '#ffffff',
   },
   fonts: {
     serif: 'Zilla Slab, Times New Roman',

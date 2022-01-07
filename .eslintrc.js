@@ -9,6 +9,7 @@ module.exports = {
     'airbnb',
     'plugin:react/recommended',
     'eslint:recommended',
+    'plugin:flowtype/recommended'
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -17,7 +18,7 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: 'module',
   },
-  plugins: ['react', 'jsx-a11y', 'react-hooks', 'redux-saga', "prefer-arrow"],
+  plugins: ['react', 'jsx-a11y', 'react-hooks', 'redux-saga', "prefer-arrow",  "flowtype"],
   rules: {
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "no-var": 2,
