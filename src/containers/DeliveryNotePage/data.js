@@ -1,6 +1,6 @@
 // @flow
-
 import { DeliveryNote } from '../../classes/DeliveryNote'
+import moment from "moment";
 
 export type DeliveryNotePageState = {
   data: {
@@ -23,3 +23,10 @@ export const initialState: DeliveryNotePageState = {
     isTotalInvoiceLoading: false
   }
 }
+
+export const initialDateRange: [Date, Date] =  [
+  moment()
+    .subtract(30, 'days')
+    .toDate(),
+  new Date(),
+];

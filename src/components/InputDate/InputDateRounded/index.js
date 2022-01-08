@@ -4,13 +4,13 @@ import 'react-datepicker/dist/react-datepicker.css';
 import PropTypes from 'prop-types';
 import RoundedCalendarContainer from './RoundedCalendarContainer';
 import InputGroupDateRounded from './InputGroupDateRounded';
+import { initialDateRange } from '../../../containers/DeliveryNotePage/data';
 
 const InputDateRounded = ({
   width,
   placeholder,
   selectedDateRange,
-  setSelectedDateRange,
-  onClearInput,
+  setSelectedDateRange
 }) => {
   const [startDate, endDate] = selectedDateRange;
 
@@ -19,6 +19,10 @@ const InputDateRounded = ({
       setSelectedDateRange([null, null]);
     }
   };
+
+  const onClearInput = () => {
+    setSelectedDateRange(initialDateRange);
+  }
 
   return (
     <DatePicker
@@ -62,7 +66,6 @@ InputDateRounded.propTypes = {
   selectedDateRange: PropTypes.array,
   setSelectedDateRange: PropTypes.func,
   width: PropTypes.number,
-  onClearInput: PropTypes.func,
 };
 
 export default InputDateRounded;

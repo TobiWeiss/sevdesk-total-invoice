@@ -6,7 +6,7 @@ const StyledSvgButton = styled.button`
   border: none;
   display: flex;
   align-items: center;
-  z-index: 2;
+  z-index: 0;
 `;
 
 export default StyledSvgButton;

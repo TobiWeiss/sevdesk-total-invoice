@@ -17,7 +17,6 @@ export class DeliveryNote {
   }
   orderDate: Date;
   status: number;
-  addressName: string;
   sumNet: number;
   sumGross: number;
   addressName: string;
@@ -38,7 +37,6 @@ export class DeliveryNote {
     this.contactPerson = data.contactPerson;
     this.orderDate = new Date(data.orderDate);
     this.status = data.status;
-    this.addressName = data.addressName;
     this.sumNet = data.sumNet;
     this.sumGross = data.sumGross;
     this.address = data.address;

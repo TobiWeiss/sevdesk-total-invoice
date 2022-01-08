@@ -29,6 +29,7 @@ export const StyledInputDatePopper = styled.div`
 
   .react-datepicker {
     border: none;
+    z-index: 9999 !important;
 
     .react-datepicker__navigation {
       top: 7px;

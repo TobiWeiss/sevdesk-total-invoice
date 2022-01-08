@@ -1,12 +1,24 @@
+// @flow
+
 import * as React from 'react'
 import { useState } from 'react'
 import InputDateRounded from '../../../../components/InputDate/InputDateRounded'
 import InputSearch from '../../../../components/InputSearch'
 import { Col, Row, Container } from 'react-bootstrap'
 
-const DeliveryNoteSearch = () => {
-  const [searchText, setSearchText] = useState('')
+type DeliveryNoteSearchProps = {
+  searchText: string,
+  setSearchText: Function,
+  dateRange: [Date, Date],
+  setDateRange: Function
+}
 
+const DeliveryNoteSearch = ({
+  searchText,
+  setSearchText,
+  dateRange,
+  setDateRange
+}: DeliveryNoteSearchProps): React.Node => {
   return (
     <Container className='mb-5'>
       <Row>
@@ -19,7 +31,7 @@ const DeliveryNoteSearch = () => {
           />
         </Col>
         <Col sm={4}>
-          <InputDateRounded></InputDateRounded>
+          <InputDateRounded placeholder='Datum auswhälen' selectedDateRange={dateRange} setSelectedDateRange={setDateRange}></InputDateRounded>
         </Col>
       </Row>
     </Container>
