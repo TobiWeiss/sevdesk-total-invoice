@@ -19,6 +19,7 @@ import { Animated } from 'react-animated-css'
 import DeliveryNoteSearch from './components/DeliveryNoteSearch'
 
 const DeliveryNotePage = (): React.Node => {
+
   const createTotalInvoice: Function = useCreateTotalInvoice()
   const [
     filteredDeliveryNotes,
