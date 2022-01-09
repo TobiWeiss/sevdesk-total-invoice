@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-axios.interceptors.request.use(
-  (config) => {
-    config.headers.Accept = 'application/json';
-    config.headers.Authorization = process.env.API_KEY;
-    return config;
-  },
-  (error) => Promise.reject(error),
-);
+axios.interceptors.request.use(request => {
+    request.config.headers.Accept = 'application/json';
+    if(request.method != "options") request.headers.Authorization = process.env.API_KEY;
+    return request;
+}, error => {
+    console.log(error);
+    return Promise.reject(error);
+});
