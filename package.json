@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "build-production": "webpack --define process.env.NODE_ENV='\"production\"' --progress --colors",
+    "build-production": "webpack --mode production --env production",
     "flow": "flow",
     "start": "webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1",
