@@ -32,14 +32,14 @@ const ListTile = ({ values, onSelect }: ListeTileProps): Element<any> => {
       <StyledListTile>
         <Row>
           {values.map((value: string, index: number) => (
-            <Col xs={index === 1 ? 3 : 2}>
+            <Col xs={2} className="d-flex justify-content-center">
               <Text color={theme.colors.darkGray} font={theme.fonts.sansSerif}>
                 {value || '-'}
               </Text>
             </Col>
           ))}
-          <Col xs={3}>
-            <span className='justify-content-center'>
+          <Col xs={2}>
+            <span className='d-flex justify-content-center'>
               <StyledListTileIconWrapper>
                 <SvgButton onClick={handleSelection}>
                   <ToolTip
@@ -52,7 +52,7 @@ const ListTile = ({ values, onSelect }: ListeTileProps): Element<any> => {
                       size='md'
                       color={
                         isSelected
-                          ? theme.colors.primary
+                          ? theme.colors.green
                           : theme.colors.darkGray
                       }
                     />

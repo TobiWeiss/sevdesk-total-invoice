@@ -3,7 +3,7 @@
 import axios from 'axios'
 import { DeliveryNote } from '../../../classes/DeliveryNote'
 
-export const getOrdersAPI = (): Promise<Object> => {
+export const getDeliveryNotesAPI = (): Promise<Object> => {
   const mode = process.env.NODE_ENV;
   return axios.get(`${String(process.env.API_BASE_URL)}${mode === "production" ? "getOrderNotes.js" : ""}`)
 }

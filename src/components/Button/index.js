@@ -4,9 +4,11 @@ import * as React from 'react';
 import StyledButton from './StyledButton';
 import ContentWrapper from './ContentWrapper';
 
+/* ------------- Props ------------- */
+
 export type ButtonProps = {
-  onClick: () => mixed,
-  children: React.Node,
+  onClick: () => void,
+  children:React.Node,
   type: ButtonType,
   size: ButtonSize,
   isBlock: boolean,
@@ -20,6 +22,7 @@ export type ButtonType =
   "secondary" |
   "outlined";
 
+/* ------------- JSX ------------- */
 
 const Button = ({
   onClick,

@@ -11,6 +11,12 @@ const GlobalStyle = createGlobalStyle`
     -webkit-animation-fill-mode: initial; //Changed from both to initial
     animation-fill-mode: initial; // Changed from both to initial
   }
+
+
+  body{
+    background-color: ${theme.colors.lightGray};
+  }
+
 `
 
 export default GlobalStyle

@@ -15,12 +15,14 @@ import type {
 } from '../../../types/Actions'
 import { DeliveryNote } from '../../../classes/DeliveryNote'
 
-type GetOrdersActionType = ActionWithoutPayloadType<typeof GET_ORDERS>
-type GetOrdersSuccessActionType = ActionWithPayloadType<
+/* ------------- Action Types ------------- */
+
+type GetDeliveryNotesActionType = ActionWithoutPayloadType<typeof GET_ORDERS>
+type GetDeliveryNotesSuccessActionType = ActionWithPayloadType<
   typeof GET_ORDERS_SUCCESS,
   Array<DeliveryNote>
 >
-type GetOrdersFailureActionType = ActionWithPayloadType<
+type GetDeliveryNotesFailureActionType = ActionWithPayloadType<
   typeof GET_ORDERS_FAILURE,
   Error
 >
@@ -28,24 +30,29 @@ type CreateTotalInvoiceActionType = ActionWithPayloadType<typeof CREATE_TOTAL_IN
 type CreateTotalInvoiceSuccessActionType = ActionWithoutPayloadType<typeof CREATE_TOTAL_INVOICE_SUCCESS>
 type CreateTotalInvoiceFailureActionType = ActionWithPayloadType<typeof CREATE_TOTAL_INVOICE_FAILURE, Error>
 
-
 export type DeliveryNoteActionTypes =
-  | GetOrdersSuccessActionType
-  | GetOrdersActionType
-  | GetOrdersFailureActionType
+  | GetDeliveryNotesSuccessActionType
+  | GetDeliveryNotesActionType
+  | GetDeliveryNotesFailureActionType
+  | CreateTotalInvoiceActionType
+  | CreateTotalInvoiceSuccessActionType
+  | CreateTotalInvoiceFailureActionType
 
-export const getOrders = (): GetOrdersActionType => ({
+
+/* ------------- Actions ------------- */
+
+export const getDeliveryNotes = (): GetDeliveryNotesActionType => ({
   type: GET_ORDERS
 })
 
-export const getOrdersSuccess = (
+export const getDeliveryNotesSuccess = (
   data: Array<DeliveryNote>
-): GetOrdersSuccessActionType => ({
+): GetDeliveryNotesSuccessActionType => ({
   type: GET_ORDERS_SUCCESS,
   payload: data
 })
 
-export const getOrdersFailure = (error: Error): GetOrdersFailureActionType => ({
+export const getDeliveryNotesFailure = (error: Error): GetDeliveryNotesFailureActionType => ({
   type: GET_ORDERS_FAILURE,
   payload: error
 })

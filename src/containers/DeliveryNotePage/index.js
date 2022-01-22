@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 import H1 from '../../components/Headlines/H1'
 import {
-  useGetOrders,
+  useGetDeliveryNotes,
   useCreateTotalInvoice,
   useSearchDeliveryNotes,
   useSelectDeliveryNotes
@@ -17,9 +17,11 @@ import Button from '../../components/Button'
 import theme from '../../theme'
 import { Animated } from 'react-animated-css'
 import DeliveryNoteSearch from './components/DeliveryNoteSearch'
+import ModalService from '../../services/modalService'
+import { getCreateInvoiceModal } from '../../components/Modal/ModalHandler'
+import ListTileHeader from '../../components/ListTileHeader'
 
 const DeliveryNotePage = (): React.Node => {
-
   const createTotalInvoice: Function = useCreateTotalInvoice()
   const [
     filteredDeliveryNotes,
@@ -32,6 +34,20 @@ const DeliveryNotePage = (): React.Node => {
     selectedDeliveryNotes,
     handleDeliveryNoteSelection
   ] = useSelectDeliveryNotes(filteredDeliveryNotes)
+
+  const handleInvoiceCreation = (): void => {
+    const onConfirm = (): void => {
+      createTotalInvoice(selectedDeliveryNotes);
+      ModalService.close();
+    }
+    const onCancel = (): void => {
+      ModalService.close();
+    }
+
+    ModalService.open(
+      getCreateInvoiceModal(onConfirm, onCancel, selectedDeliveryNotes.length)
+    )
+  }
 
   return (
     <>
@@ -67,7 +83,10 @@ const DeliveryNotePage = (): React.Node => {
             isVisible={true}
             animationInDuration={2000}
           >
-            <Button onClick={() => createTotalInvoice(selectedDeliveryNotes)}>
+            <Button
+              onClick={() => handleInvoiceCreation()}
+              type={'primary'}
+            >
               <Text color={theme.colors.white}>
                 {'Sammelrechnung erzeugen'}
               </Text>
@@ -75,7 +94,14 @@ const DeliveryNotePage = (): React.Node => {
           </Animated>
         </div>
         <Animated
-          animationIn='fadeInRight'
+          animationIn='fadeInLeft'
+          isVisible={true}
+          animationInDuration={2000}
+        >
+          <ListTileHeader header={["Lieferscheinnr.", "Kunde", "Datum", "Positionen", "Abgerechnet", "Auswählen" ]} />
+        </Animated>
+        <Animated
+          animationIn='fadeInLeft'
           isVisible={true}
           animationInDuration={2000}
         >
@@ -89,7 +115,8 @@ const DeliveryNotePage = (): React.Node => {
                       deliveryNote.id.toString(),
                       deliveryNote.addressName,
                       deliveryNote.create.toLocaleDateString('de-DE'),
-                      deliveryNote.positions.length.toString()
+                      deliveryNote.positions.length.toString(),
+                      deliveryNote.status ==  "1000" ? 'Ja' : 'Nein',
                     ]}
                     onSelect={() => {
                       handleDeliveryNoteSelection(deliveryNote.id)

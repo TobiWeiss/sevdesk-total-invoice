@@ -1,0 +1,24 @@
+{
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "dart.flutterSdkPath": "/Users/tobiasweiss/Downloads/flutter",
+  "[javascript]": {
+
+
+
+      "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "editor.codeActionsOnSave":  {
+      "source.fixAll.eslint": true
+    },
+  "eslint.validate": [
+      "javascript"
+  ],
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.inlineSuggest.enabled": true,
+  "security.workspace.trust.enabled": true,
+  "bracketPairColorizer.depreciation-notice": false,
+  "javascript.suggestionActions.enabled": true,
+  "javascript.validate.enable": false,
+  "window.zoomLevel": 0
+}

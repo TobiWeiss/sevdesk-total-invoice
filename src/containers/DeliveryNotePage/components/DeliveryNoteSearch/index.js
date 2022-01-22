@@ -6,12 +6,16 @@ import InputDateRounded from '../../../../components/InputDate/InputDateRounded'
 import InputSearch from '../../../../components/InputSearch'
 import { Col, Row, Container } from 'react-bootstrap'
 
+/* ------------- Props ------------- */
+
 type DeliveryNoteSearchProps = {
   searchText: string,
   setSearchText: Function,
   dateRange: [Date, Date],
   setDateRange: Function
 }
+
+/* ------------- JSX ------------- */
 
 const DeliveryNoteSearch = ({
   searchText,

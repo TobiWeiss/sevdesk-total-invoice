@@ -1,5 +1,6 @@
 // @flow
-import type { OrderPosition } from '../types/OrderPosition';
+import type { DeliveryNotePositionType } from '../types/DeliveryNotePosition'
+import type { DeliveryNoteType } from '../types/DeliveryNote'
 
 export class DeliveryNote {
   id: number;
@@ -8,15 +9,15 @@ export class DeliveryNote {
   update: Date;
   orderNumber: string;
   contact: {
-    id: number;
-    objectName: string;
-  }
+    id: number,
+    objectName: string
+  };
   contactPerson: {
-    id: number;
-    objectName: string;
-  }
+    id: number,
+    objectName: string
+  };
   orderDate: Date;
-  status: number;
+  status: string;
   sumNet: number;
   sumGross: number;
   addressName: string;
@@ -25,9 +26,10 @@ export class DeliveryNote {
   addressCity: string;
   addressCountry: Object;
   address: string;
-  positions: Array<OrderPosition>;
+  positions: Array<DeliveryNotePositionType>;
+  xyz: string;
 
-  constructor(data: Object) {
+  constructor (data: DeliveryNoteType) {
     this.id = data.id;
     this.objectName = data.objectName;
     this.create = new Date(data.create);

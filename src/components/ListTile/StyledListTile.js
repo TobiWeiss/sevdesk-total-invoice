@@ -8,8 +8,6 @@ const StyledListTile = styled.div`
 
   .row {
     height: 63px;
-    display: flex;
-    justify-content: start;
     align-items: center;
     margin-left: 30px;
   }

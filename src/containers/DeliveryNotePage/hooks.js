@@ -5,19 +5,19 @@ import { useDispatch, useSelector } from 'react-redux'
 import { DeliveryNote } from '../../classes/DeliveryNote'
 import { useInjectSaga } from '../../utils/injectSaga'
 import { initialDateRange } from './data'
-import { getOrders, createTotalInvoice } from './store/actions'
-import { watchGetOrders, watchCreateTotalInvoice } from './store/saga'
+import { getDeliveryNotes, createTotalInvoice } from './store/actions'
+import { watchGetDeliveryNotes, watchCreateTotalInvoice } from './store/saga'
 import type { ActionWithoutPayloadType } from '../../types/Actions'
 
-export const useGetOrders = (): Array<DeliveryNote> => {
-  useInjectSaga({ key: 'deliveryNotePage1', saga: watchGetOrders })
+export const useGetDeliveryNotes = (): Array<DeliveryNote> => {
+  useInjectSaga({ key: 'deliveryNotePage1', saga: watchGetDeliveryNotes })
 
   const dispatch = useDispatch()
   const deliveryNotes: Array<DeliveryNote> = useSelector(
     state => state.deliveryNotePage.data.orderNotes
   )
 
-  useEffect((): Function => dispatch(getOrders()), [])
+  useEffect((): Function => dispatch(getDeliveryNotes()), [])
 
   return deliveryNotes
 }
@@ -65,7 +65,7 @@ export const useSearchDeliveryNotes = (): [
   [Date, Date],
   Function
 ] => {
-  const deliveryNotes: Array<DeliveryNote> = useGetOrders()
+  const deliveryNotes: Array<DeliveryNote> = useGetDeliveryNotes()
   const [filteredDeliveryNotes, setFilteredDeliveryNotes] = useState<
     Array<DeliveryNote>
   >([])
@@ -84,8 +84,8 @@ export const useSearchDeliveryNotes = (): [
           deliveryNote.addressName
             .toLowerCase()
             .includes(searchText.trim().toLowerCase()) &&
-          deliveryNoteDate >= dateRange[0] &&
-          deliveryNoteDate <= dateRange[1]
+          deliveryNoteDate.setHours(0,0,0,0) >= dateRange[0].setHours(0,0,0,0) &&
+          (dateRange[1] === null || deliveryNoteDate.setHours(0,0,0,0) <= dateRange[1].setHours(0,0,0,0))
         )
       })
     )

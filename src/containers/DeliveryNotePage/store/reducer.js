@@ -1,5 +1,6 @@
 // @flow
 
+import { toast } from 'react-toastify'
 import produce from 'immer'
 import {
   GET_ORDERS,
@@ -35,10 +36,30 @@ const deliveryNotePageReducer = (
         draft.loading.isTotalInvoiceLoading = true
         break
       case CREATE_TOTAL_INVOICE_SUCCESS:
-        draft.loading.isTotalInvoiceLoading = false
+        draft.loading.isTotalInvoiceLoading = false;
+        const options = {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined
+        };
+        toast.success("Rechnung erfolgreich erstellt.", options);
         break
       case CREATE_TOTAL_INVOICE_FAILURE:
         draft.loading.isTotalInvoiceLoading = false
+        const options2 = {
+          position: 'top-right',
+          autoClose: 7000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined
+        };
+        toast.error("Unerwarteter Fehler, bitte Sohn anrufen.", options2);
         draft.error = action.payload
         break
     }
