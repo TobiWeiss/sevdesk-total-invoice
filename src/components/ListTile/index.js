@@ -16,10 +16,11 @@ import { Animated } from 'react-animated-css'
 
 type ListeTileProps = {
   values: Array<string>,
-  onSelect: Function
+  onSelect: Function,
+  index: number
 }
 
-const ListTile = ({ values, onSelect }: ListeTileProps): Element<any> => {
+const ListTile = ({ values, onSelect, index }: ListeTileProps): Element<any> => {
   const [isSelected, setIsSelected]: [boolean, Function] = useState(false)
 
   const handleSelection = (): void => {
@@ -29,7 +30,7 @@ const ListTile = ({ values, onSelect }: ListeTileProps): Element<any> => {
 
   return (
     <>
-      <StyledListTile>
+      <StyledListTile index={index}>
         <Row>
           {values.map((value: string, index: number) => (
             <Col xs={2} className="d-flex justify-content-center">

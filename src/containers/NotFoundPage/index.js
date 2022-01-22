@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => (
   <Container>
-    <h1>404 - page not found</h1>
+    <h1>Zugriff verweigert</h1>
     <p>
-      This page was not found. Return to home page
+      Bitte logge dich unter <Link to="/login">/login</Link> ein.
       {' '}
       <Link to="/">here</Link>
       .

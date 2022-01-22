@@ -5,8 +5,8 @@ import { Row, Col } from 'react-bootstrap';
 import Text from '../Text';
 import StyledListTileHeader from './StyledListTileHeader';
 
-const ListTileHeader = ({ header }) => (
-  <StyledListTileHeader>
+const ListTileHeader = ({ header, index }) => (
+  <StyledListTileHeader index={index}>
     <Row>
       {header.map(element => (
         <Col xs={2} key={uuidv4()} className="d-flex justify-content-center">
@@ -19,6 +19,7 @@ const ListTileHeader = ({ header }) => (
 
 ListTileHeader.propTypes = {
   header: PropTypes.array,
+  index: PropTypes.number,
 };
 
 export default ListTileHeader;

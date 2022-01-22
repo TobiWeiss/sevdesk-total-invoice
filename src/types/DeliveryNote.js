@@ -16,7 +16,7 @@ export type DeliveryNoteType = {|
     objectName: string
   },
   orderDate: Date,
-  status: number,
+  status: string,
   sumNet: number,
   sumGross: number,
   addressName: string,

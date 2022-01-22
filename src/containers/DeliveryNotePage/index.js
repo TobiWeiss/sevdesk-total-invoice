@@ -20,6 +20,8 @@ import DeliveryNoteSearch from './components/DeliveryNoteSearch'
 import ModalService from '../../services/modalService'
 import { getCreateInvoiceModal } from '../../components/Modal/ModalHandler'
 import ListTileHeader from '../../components/ListTileHeader'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 const DeliveryNotePage = (): React.Node => {
   const createTotalInvoice: Function = useCreateTotalInvoice()
@@ -37,11 +39,11 @@ const DeliveryNotePage = (): React.Node => {
 
   const handleInvoiceCreation = (): void => {
     const onConfirm = (): void => {
-      createTotalInvoice(selectedDeliveryNotes);
-      ModalService.close();
+      createTotalInvoice(selectedDeliveryNotes)
+      ModalService.close()
     }
     const onCancel = (): void => {
-      ModalService.close();
+      ModalService.close()
     }
 
     ModalService.open(
@@ -83,10 +85,7 @@ const DeliveryNotePage = (): React.Node => {
             isVisible={true}
             animationInDuration={2000}
           >
-            <Button
-              onClick={() => handleInvoiceCreation()}
-              type={'primary'}
-            >
+            <Button onClick={() => handleInvoiceCreation()} type={'primary'}>
               <Text color={theme.colors.white}>
                 {'Sammelrechnung erzeugen'}
               </Text>
@@ -98,37 +97,43 @@ const DeliveryNotePage = (): React.Node => {
           isVisible={true}
           animationInDuration={2000}
         >
-          <ListTileHeader header={["Lieferscheinnr.", "Kunde", "Datum", "Positionen", "Abgerechnet", "Auswählen" ]} />
+          <ListTileHeader
+            header={[
+              'Lieferscheinnr.',
+              'Kunde',
+              'Datum',
+              'Positionen',
+              'Abgerechnet',
+              'Auswählen'
+            ]}
+          />
         </Animated>
-        <Animated
-          animationIn='fadeInLeft'
-          isVisible={true}
-          animationInDuration={2000}
-        >
-          {filteredDeliveryNotes &&
-            filteredDeliveryNotes.length > 0 &&
-            filteredDeliveryNotes.map(
-              (deliveryNote: DeliveryNote, index: number) => (
-                <div className='mb-2'>
-                  <ListTile
-                    values={[
-                      deliveryNote.id.toString(),
-                      deliveryNote.addressName,
-                      deliveryNote.create.toLocaleDateString('de-DE'),
-                      deliveryNote.positions.length.toString(),
-                      deliveryNote.status ==  "1000" ? 'Ja' : 'Nein',
-                    ]}
-                    onSelect={() => {
-                      handleDeliveryNoteSelection(deliveryNote.id)
-                    }}
-                  ></ListTile>
-                </div>
-              )
-            )}
-        </Animated>
+        {filteredDeliveryNotes &&
+          filteredDeliveryNotes.length > 0 &&
+          filteredDeliveryNotes.map(
+            (deliveryNote: DeliveryNote, index: number) => (
+              <div className='mb-2'>
+                <ListTile
+                  index={index}
+                  values={[
+                    deliveryNote.id.toString(),
+                    deliveryNote.addressName,
+                    deliveryNote.create.toLocaleDateString('de-DE'),
+                    deliveryNote.positions.length.toString(),
+                    deliveryNote.status == '1000' ? 'Ja' : 'Nein'
+                  ]}
+                  onSelect={() => {
+                    handleDeliveryNoteSelection(deliveryNote.id)
+                  }}
+                ></ListTile>
+              </div>
+            )
+          )}
       </Container>
     </>
   )
 }
 
-export default DeliveryNotePage
+export default withAuthenticationRequired(DeliveryNotePage, {
+  onRedirecting: (): React.Node => <div className="mt-5"><LoadingSpinner /></div>
+});
