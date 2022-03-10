@@ -2,6 +2,7 @@
 import '@babel/polyfill'
 import { takeLatest, call, put } from 'redux-saga/effects'
 import {
+  getDeliveryNotes,
   getDeliveryNotesFailure,
   getDeliveryNotesSuccess,
   createTotalInvoiceFailure,
@@ -13,7 +14,7 @@ import type { Saga } from 'redux-saga'
 import { DeliveryNote } from '../../../classes/DeliveryNote'
 import type { DeliveryNoteType } from "../../../types/DeliveryNote";
 
-function * getDeliveryNotes (): Saga<void> {
+function * getDeliveryNotesSaga (): Saga<void> {
   try {
     const result: Object = yield call(getDeliveryNotesAPI)
     const deliveryNotes: Array<DeliveryNote> = result.data.map(
@@ -25,9 +26,10 @@ function * getDeliveryNotes (): Saga<void> {
   }
 }
 
-function * createTotalInvoice (data: Array<DeliveryNote>): Saga<void> {
+function * createTotalInvoiceSaga (data: Array<DeliveryNote>): Saga<void> {
   try {
     yield call(createTotalInvoiceAPI, data)
+    yield put(getDeliveryNotes())
     yield put(createTotalInvoiceSuccess())
   } catch (error) {
     yield put(createTotalInvoiceFailure(error))
@@ -35,10 +37,10 @@ function * createTotalInvoice (data: Array<DeliveryNote>): Saga<void> {
 }
 
 export function* watchGetDeliveryNotes(): Saga<void> {
-  yield takeLatest(GET_ORDERS, getDeliveryNotes)
+  yield takeLatest(GET_ORDERS, getDeliveryNotesSaga)
 }
 
 export function* watchCreateTotalInvoice(): Saga<void> {
-  yield takeLatest(CREATE_TOTAL_INVOICE, createTotalInvoice)
+  yield takeLatest(CREATE_TOTAL_INVOICE, createTotalInvoiceSaga)
 }
 
