@@ -16,7 +16,7 @@ Text.defaultProps = {
   isBold: false,
   color: theme.colors.darkGray,
   isInline: true,
-  textAlign: 'left',
+  textAlign: 'center',
 };
 
 Text.propTypes = {

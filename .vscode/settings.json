@@ -20,5 +20,5 @@
   "bracketPairColorizer.depreciation-notice": false,
   "javascript.suggestionActions.enabled": true,
   "javascript.validate.enable": false,
-  "window.zoomLevel": 0
+  "window.zoomLevel": 1
 }

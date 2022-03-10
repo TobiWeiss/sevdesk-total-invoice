@@ -32,14 +32,16 @@ const DeliveryNotePage = (): React.Node => {
     dateRange,
     setDateRange
   ] = useSearchDeliveryNotes()
-  const [
+  const {
     selectedDeliveryNotes,
-    handleDeliveryNoteSelection
-  ] = useSelectDeliveryNotes(filteredDeliveryNotes)
+    handleDeliveryNoteSelection,
+    clearSelectedDeliveryNotes
+   } = useSelectDeliveryNotes(filteredDeliveryNotes)
 
   const handleInvoiceCreation = (): void => {
     const onConfirm = (): void => {
       createTotalInvoice(selectedDeliveryNotes)
+      clearSelectedDeliveryNotes()
       ModalService.close()
     }
     const onCancel = (): void => {
@@ -87,7 +89,7 @@ const DeliveryNotePage = (): React.Node => {
           >
             <Button onClick={() => handleInvoiceCreation()} type={'primary'}>
               <Text color={theme.colors.white}>
-                {'Sammelrechnung erzeugen'}
+                Sammelrechnung erzeugen
               </Text>
             </Button>
           </Animated>
@@ -122,8 +124,9 @@ const DeliveryNotePage = (): React.Node => {
                     deliveryNote.positions.length.toString(),
                     deliveryNote.status == '1000' ? 'Ja' : 'Nein'
                   ]}
+                  isSelected={selectedDeliveryNotes.includes(deliveryNote)}
                   onSelect={() => {
-                    handleDeliveryNoteSelection(deliveryNote.id)
+                    handleDeliveryNoteSelection(deliveryNote.id, deliveryNote.addressName)
                   }}
                 ></ListTile>
               </div>

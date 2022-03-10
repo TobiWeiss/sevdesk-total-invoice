@@ -17,14 +17,13 @@ import { Animated } from 'react-animated-css'
 type ListeTileProps = {
   values: Array<string>,
   onSelect: Function,
-  index: number
+  index: number,
+  isSelected: boolean
 }
 
-const ListTile = ({ values, onSelect, index }: ListeTileProps): Element<any> => {
-  const [isSelected, setIsSelected]: [boolean, Function] = useState(false)
+const ListTile = ({ values, onSelect, index, isSelected }: ListeTileProps): Element<any> => {
 
   const handleSelection = (): void => {
-    setIsSelected(!isSelected)
     onSelect(values)
   }
 
@@ -50,10 +49,10 @@ const ListTile = ({ values, onSelect, index }: ListeTileProps): Element<any> => 
                     }
                   >
                     <IconCheck
-                      size='md'
+                      size='lg'
                       color={
                         isSelected
-                          ? theme.colors.green
+                          ? theme.colors.lightGreen
                           : theme.colors.darkGray
                       }
                     />

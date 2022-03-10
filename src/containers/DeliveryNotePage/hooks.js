@@ -8,6 +8,7 @@ import { initialDateRange } from './data'
 import { getDeliveryNotes, createTotalInvoice } from './store/actions'
 import { watchGetDeliveryNotes, watchCreateTotalInvoice } from './store/saga'
 import type { ActionWithoutPayloadType } from '../../types/Actions'
+import { toast } from 'react-toastify'
 
 export const useGetDeliveryNotes = (): Array<DeliveryNote> => {
   useInjectSaga({ key: 'deliveryNotePage1', saga: watchGetDeliveryNotes })
@@ -32,16 +33,44 @@ export const useCreateTotalInvoice = (): Function => {
 
 export const useSelectDeliveryNotes = (
   deliveryNotes: Array<DeliveryNote>
-): [Array<DeliveryNote>, Function] => {
+): {
+  selectedDeliveryNotes: Array<DeliveryNote>,
+  handleDeliveryNoteSelection: Function,
+  clearSelectedDeliveryNotes: Function
+} => {
   const [selectedDeliveryNotes, setSelectedDeliveryNotes] = useState<
     Array<DeliveryNote>
   >([])
 
-  const handleDeliveryNoteSelection = (deliveryNoteId: number): void => {
-    const isDeliveryNoteSelected: boolean = selectedDeliveryNotes.some(
+  const handleDeliveryNoteSelection = (
+    deliveryNoteId: number,
+    addressName: string
+  ): void => {
+    const isDeliveryNoteAlreadySelected: boolean = selectedDeliveryNotes.some(
       (deliveryNote: DeliveryNote) => deliveryNote.id === deliveryNoteId
     )
-    isDeliveryNoteSelected
+
+    const isSameCustomer: boolean = selectedDeliveryNotes.every(
+      deliveryNote => deliveryNote.addressName == addressName
+    )
+
+    if (!isSameCustomer && !isDeliveryNoteAlreadySelected) {
+      const options = {
+        position: 'top-right',
+        autoClose: 10000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      }
+      toast.error(
+        `Sammelrechnungen können nur für den gleichen Kunden erstellt werden! Bitte Lieferscheine von ${selectedDeliveryNotes[0].addressName} auswählen.`,
+        options
+      )
+      return
+    }
+    isDeliveryNoteAlreadySelected
       ? setSelectedDeliveryNotes(
           selectedDeliveryNotes.filter(
             (deliveryNote: DeliveryNote) => deliveryNote.id !== deliveryNoteId
@@ -55,7 +84,13 @@ export const useSelectDeliveryNotes = (
         ])
   }
 
-  return [selectedDeliveryNotes, handleDeliveryNoteSelection]
+  const clearSelectedDeliveryNotes = () => setSelectedDeliveryNotes([])
+
+  return {
+    selectedDeliveryNotes,
+    handleDeliveryNoteSelection,
+    clearSelectedDeliveryNotes
+  }
 }
 
 export const useSearchDeliveryNotes = (): [
@@ -84,8 +119,11 @@ export const useSearchDeliveryNotes = (): [
           deliveryNote.addressName
             .toLowerCase()
             .includes(searchText.trim().toLowerCase()) &&
-          deliveryNoteDate.setHours(0,0,0,0) >= dateRange[0].setHours(0,0,0,0) &&
-          (dateRange[1] === null || deliveryNoteDate.setHours(0,0,0,0) <= dateRange[1].setHours(0,0,0,0))
+          deliveryNoteDate.setHours(0, 0, 0, 0) >=
+            dateRange[0].setHours(0, 0, 0, 0) &&
+          (dateRange[1] === null ||
+            deliveryNoteDate.setHours(0, 0, 0, 0) <=
+              dateRange[1].setHours(0, 0, 0, 0))
         )
       })
     )
