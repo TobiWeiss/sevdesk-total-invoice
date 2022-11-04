@@ -103,7 +103,7 @@ const DeliveryNotePage = (): React.Node => {
             header={[
               'Lieferscheinnr.',
               'Kunde',
-              'Datum',
+              'Erstellungsdatum',
               'Positionen',
               'Abgerechnet',
               'Auswählen'
